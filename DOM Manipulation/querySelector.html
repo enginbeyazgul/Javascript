@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"
+	<head>
+		<meta charset="utf-8">
+		<title>querySelector</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style>
+			.bg-red {
+				background-color: crimson;
+				color: #ffffff;
+			}
+			.bg-orange {
+				background-color: orange;
+				color: #ffffff;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<p>
+			<button data-snack="chips">1</button>
+			<button class="bg-red">2</button>
+			<button class="bg-orange">3</button>
+			<button data-snack>4</button>
+			<button class="bg-red" data-snack="carrots">5</button>
+		</p>
+
+
+		<script>
+			let button = document.querySelector('button');
+			console.log(button);
+
+			let red = document.querySelector('.bg-red');
+			console.log(red);
+
+			let carrots = document.querySelector('[data-snack="carrots"]');
+			console.log(carrots);
+
+			let none = document.querySelector('.bg-orange');
+			console.log(none);
+
+			if (none) {
+				console.log('none tanımlı');
+			}
+		</script>
+	</body>
+</html>
