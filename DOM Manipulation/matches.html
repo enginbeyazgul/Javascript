@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>matches</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style>
+
+			.bg-red {
+				background-color: #cb070e;
+				color: #ffffff;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<p>
+			<button data-snack="chips">1</button>
+			<button class="bg-red">2</button>
+			<button>3</button>
+			<button data-snack>4</button>
+			<button class="bg-red" data-snack="carrots">5</button>
+		</p>
+
+		<script>
+			let red = document.querySelector('.bg-red');
+			if (red.matches('[data-snack]')) {
+				console.log('red eşleşti');
+			} else {
+				console.log('data-snack ile red eşleşmedi');
+			}
+
+			let carrots = document.querySelector('[data-snack="carrots"]');
+			if (carrots.matches('.bg-red')) {
+				console.log('carrots eşleşti');
+			} else {
+				console.log('carrots bg-red ile eşleşmedi');
+			}
+		</script>
+	</body>
+</html>
