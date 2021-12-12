@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>for...in</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+
+		<script>
+			let lunch = {
+				sandwich: 'ham',
+				snack: 'chips',
+				drink: 'soda',
+				desert: 'cookie',
+				guests: 3,
+				alcohol: false
+			};
+
+			for (let key in lunch) {
+				console.log(key); 
+				console.log(lunch[key]);
+			}
+		</script>
+	</body>
+</html>
