@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>style</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style type="text/css">
+			body {
+				margin: 0 auto;
+				max-width: 40em;
+				width: 88%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<p id="sandwich" style="background-color: green; color: white;">Sandwich</p>
+
+
+		<script>
+			let sandwich = document.querySelector('#sandwich');
+			let bgColor = sandwich.style.backgroundColor;
+			let fontWeight = sandwich.style.fontWeight;
+			console.log(bgColor);
+			console.log(fontWeight);
+			sandwich.style.backgroundColor = 'purple';
+
+			let styles = sandwich.style.cssText;
+			console.log(styles);
+			sandwich.style.cssText = 'font-size: 2em; font-weight: bold;';
+			sandwich.style.cssText += 'color: purple;';
+		</script>
+	</body>
+</html>

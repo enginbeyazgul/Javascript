@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>window.getComputedStyle</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style type="text/css">
+			body {
+				margin: 0 auto;
+				max-width: 40em;
+				width: 88%;
+			}
+
+			#sandwich {
+				background-color: rebeccapurple;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="sandwich">Sandwich</p>
+		<script>
+			let sandwich = document.querySelector('#sandwich');
+            //window.getComputedStyle()
+			let bgColor = window.getComputedStyle(sandwich).backgroundColor;
+			let height = window.getComputedStyle(sandwich).height;
+			console.log(bgColor);
+			console.log(height);
+		</script>
+	</body>
+</html>
