@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Array.forEach() & NodeList.forEach()</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style type="text/css">
+			body {
+				margin: 0 auto;
+				max-width: 40em;
+				width: 88%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<p class="sandwiches">d</p>
+		<p class="sandwiches">a</p>
+		<p class="sandwiches">c</p>
+		<p class="sandwiches">b</p>
+
+
+		<script>
+			let sandwiches = ['a', 'b', 'c', 'd'];
+			sandwiches.forEach(function (sandwich, index) {
+				console.log(index); 
+				console.log(sandwich);
+			});
+
+			document.querySelectorAll('.sandwiches').forEach(function (sandwich, index, sandwiches) {
+				console.log(sandwich);
+				console.log(sandwiches);
+			});
+
+			sandwiches.forEach(function (sandwich, index) {
+				if (sandwich === 'c') return;
+				console.log(index); 
+				console.log(sandwich); 
+			});
+		</script>
+	</body>
+</html>
