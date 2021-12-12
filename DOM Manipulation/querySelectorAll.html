@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelectorAll</title>
+</head>
+<body>
+    <p>
+        <button data-snack>1</button>
+        <button class="bg-red">2</button>
+        <button>3</button>
+        <button data-snack>4</button>
+        <button class="bg-red" data-snack>5</button>
+    </p>
+    <script>
+        let buttons = document.getSelectorAll('button');
+        console.log(buttons);
+        let elemsRed = document.getSelectorAll('.bg-red');
+        //console.log(elemsRed);
+        let elemsSnacks = document.getSelectorAll('data-snack');
+        //console.log(elemsSnacks);
+    </script>
+</body>
+</html>
