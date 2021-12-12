@@ -1,2 +1,2 @@
 # Javascript
-Burası saf Javascript dersleri depomdur.
+Saf Javascript dersleri.
