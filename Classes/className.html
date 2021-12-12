@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>className</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style type="text/css">
+			body {
+				margin: 0 auto;
+				max-width: 40em;
+				width: 88%;
+			}
+
+			.tuna {
+				background-color: steelblue;
+			}
+
+			.turkey {
+				background-color: saddlebrown;
+			}
+
+			.tomato {
+				text-decoration: underline;
+			}
+
+			.mayo {
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="sandwich" class="tuna mayo">Sandwich</p>
+		<script>
+			let elem = document.querySelector('#sandwich');
+			let elemClasses = elem.className;
+			console.log(elemClasses);
+			elem.className += ' tomato';
+			elem.className = 'turkey';
+            elem.className = 'tuna';
+		</script>
+	</body>
+</html>
