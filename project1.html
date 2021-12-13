@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Project1</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style type="text/css">
+			body {
+				margin: 0 auto;
+				max-width: 40em;
+				width: 88%;
+			}
+			label,
+			input {
+				display: block;
+				width: 100%;
+			}
+
+			input {
+				margin-bottom: 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Change Password</h1>
+		<form>
+			<label for="current-pw">Current Password</label>
+			<input type="password" id="current-pw">
+			<label for="new-pw">New Password</label>
+			<input type="password" id="new-pw">
+			<p><button type="button" data-password>Show Passwords</button></p>
+			<p><button>Change Password</button></p>
+		</form>
+		<script>
+			let toggle = document.querySelector('[data-password]');
+            let inputs = document.querySelectorAll('[type="password"]');
+            toggle.addEventListener('click', function(event){
+                if(event.target.innerHTML == "Show Passwords"){
+                    event.target.innerHTML = "Hide Passwords";
+                    for(let input of inputs){
+                        input.type = 'text';
+                    }
+                }
+                else{
+                    event.target.innerHTML = "Show Passwords";
+                    for(let input of inputs){
+                        input.type = 'password';
+                    }
+                }
+            });
+            toggle
+		</script>
+	</body>
+</html>
