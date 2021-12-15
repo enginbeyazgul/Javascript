@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Strings</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<script>
+            //sola basamak sayısı belirttik
+			let hour3 = '3';
+			let hour12 = '12';
+			let padded3 = hour3.padStart(2, '0');
+			let padded12 = hour12.padStart(3, '0');
+			console.log(padded3);
+			console.log(padded12);
+            //sağa basamak sayısı belirttik
+            let minutes0 = '2';
+			let minutes12 = '12';
+			let padded0 = minutes0.padEnd(2, '0');
+			let padded122 = minutes12.padEnd(2, '0');
+			console.log(padded0);
+			console.log(padded122);
+            //baştaki boşluğu trim ile sildik
+            let str = '   I love Cape Cod potato chips.   ';
+			let trimmed = str.trim();
+			console.log(str);
+			console.log(trimmed);
+            //büyük küçük harf dönüştürmesi yaptık
+            let text = 'This sentence has some MIXED CASE LeTTeRs in it.';
+			let upper = text.toUpperCase();
+            let lower = text.toLowerCase();
+			console.log('upper: '+upper+'\nlower: '+lower);
+            //ters taksim işareti ile tırnak işaretini görmezden gelebiliyoruz
+            let str1 = 'What\'s the weather like today?';
+			console.log(str1);
+            //
+            let wizards = ['Hermione', 'Neville', 'Gandalf', 'Radagast', 'Merlin'];
+			let showHeading = false;
+			let str3 =
+				`${showHeading ? '<h1>Awesome Wizards</h1>' : ''}
+				${(function () {
+					if (wizards.length > 3) {
+						return '<p>There are at least three wizards.</p>';
+					}
+					return '<p>There are fewer than three wizards.</p>';
+				})()}
+				<ul>
+					${wizards.map(function (wizard) {
+						return `<li>${wizard}</li>`;
+					}).join('')}
+				</ul>`;
+			console.log(str3);
+		</script>
+	</body>
+</html>
