@@ -51,6 +51,24 @@
 					}).join('')}
 				</ul>`;
 			console.log(str3);
+            //chips kelimesi yerine başka kelimeler koyduk
+            let moreChips = 'Cape Cod potato chips are my favorite brand of chips.';
+			let noChips = moreChips.replace('chips', 'deep fried potato slices');
+			console.log(noChips);
+            //soldan + sağdan - olarak girdiğimiz sayılardan ifadeyi parçaladık
+            let text2 = 'Cape Cod potato chips';
+			console.log(text2.slice(0, -6));
+            //virgülden itibaren parçaladık ama 2 değer olacak şekilde
+            let shoppingList = 'Soda, turkey sandwiches, potato chips, chocolate chip cookies';
+			let limitedMenu = shoppingList.split(', ', 2);
+			console.log(limitedMenu);
+            //kelimenin ifadede kaçıncı char değeri olduğunu döndürdük yoksa -1 döner
+            let str33 = 'I love Cape Cod potato chips.';
+			console.log(str33.indexOf('Cape'));
+            //ifade de kelime var mı yok mu true ya da false döner
+            let str11 = 'I love Cape Cod potato chips.';
+			console.log(str11.includes('Cape Cod')); // true
+			console.log(str11.includes('cape cod')); // false
 		</script>
 	</body>
 </html>

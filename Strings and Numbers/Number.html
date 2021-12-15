@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Number</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<script>
+            //string değeri int ifadeye dönüştürdük
+			let fourtyTwo = parseInt('42', 10);
+			console.log(fourtyTwo);
+            //string değeri float ifadeye dönüştürdük
+            let pi = parseFloat('3.14');
+			console.log(pi);
+            //basamak sayısı sınırı belirledik
+            let pii = 3.14159;
+			let piFixed = pii.toFixed(2);
+			console.log(piFixed);
+            //pi sayımızı string ifadeye dönüştürdük
+            let piii = 3.14;
+			let piString = piii.toString();
+			console.log(piString);
+            //mutlak değer aldık
+            let num1 = Math.abs(-72);
+			console.log(num1);
+            //aşağıya yuvarladık
+			let num2 = Math.floor(3.14);
+			console.log(num2);
+            //yukarıya yuvarladık
+            let num3 = Math.ceil(3.14);
+			console.log(num3);
+            //maximum değeri aldık
+            let max1 = Math.max(42, 3.14, 27);
+			console.log(max1);
+            //minimum değeri aldık
+            let min1 = Math.min(42, 3.14, 27);
+			console.log(min1);
+            //ramdom 1-10 arasında rakam ürettik
+            let rand = Math.random();
+            rand = Math.ceil(rand*10);
+			console.log(rand);
+		</script>
+	</body>
+</html>
