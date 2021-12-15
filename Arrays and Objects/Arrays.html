@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Array</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<script>
+            //dizimizin 2 indisindeki veriye eriştik
+			let sandwiches = ['turkey', 'tuna', 'ham', 'pb&j'];
+			console.log(sandwiches[2]);
+            //ham ifadesinin dizideki indisine ulaştık
+            let pbAndJ = sandwiches.indexOf('ham');
+			console.log(pbAndJ);
+            //dizimizde ham değeri var mı varsa true yoksa false döner
+            let ham = sandwiches.includes('ham');
+			console.log(ham);
+            //dizimizdeki isimleri döndürdük
+            let data = [
+				{
+					name: 'Kyle',
+					occupation: 'Fashion Designer'
+				},
+				{
+					name: 'Liza',
+					occupation: 'Web Developer'
+				},
+				{
+					name: 'Emily',
+					occupation: 'Web Designer'
+				},
+				{
+					name: 'Melissa',
+					occupation: 'Fashion Designer'
+				},
+				{
+					name: 'Tom',
+					occupation: 'Web Developer'
+				}
+			];
+			let names = data.map(function (item) {
+				return item.name;
+			});
+			console.log(names);
+            //10 dan büyük sayıları diziden seçtik
+            let numbers = [1, 2, 7, 42, 99, 101];
+			let biggerThanTen = numbers.filter(function (item) {
+				return item > 10;
+			});
+			console.log(biggerThanTen);
+            //dizideki değerlerin toplamını bulduk
+            let numberss = [1, 2, 3];
+			let total = numberss.reduce(function (sum, current) {
+				return sum + current;
+			}, 0);
+			console.log(total);
+            //diziyi ters çevirdik
+            let count = [1, 2, 3, 4, 5];
+			count.reverse();
+			console.log(count);
+            //dizi elemanlarının arasına değer ekledik
+            let messages = [
+				'I love Cape Cod potato chips.',
+				'What about you?',
+                'I hope succeed'
+			];
+			let str = messages.join('1365');
+			console.log(str);
+            //dizimize yeni değerler ekledik
+            let sandwichess = ['turkey', 'tuna', 'blt'];
+			sandwichess.push('chicken', 'pb&j');
+			console.log(sandwichess);
+            //iki diziyi birleştirdik
+            let sandwiches11 = ['turkey', 'tuna', 'blt'];
+			let sandwiches22 = ['chicken', 'pb&j'];
+			let allSandwichess = sandwiches11.concat(sandwiches22);
+			console.log(allSandwichess);
+            //dizinin 3. ve 4. elemanını aldık (2. ve 3. indis)
+            let sandwichees = ['turkey', 'tuna', 'chicken salad', 'italian', 'blt', 'grilled cheese'];
+			let fewerSandwiches2 = sandwichees.slice(2, 4);
+			console.log(fewerSandwiches2);
+            //2. indisten sonraki eleman yerine turkish değerini koyduk
+            let sandwichesss = ['turkey', 'tuna', 'ham', 'pb&j'];
+			sandwichesss.splice(2, 0, 'turkish');
+			console.log(sandwichesss);
+            //dizinin ilk elemanını sildik
+            let wizards = ['Gandalf', 'Radagast', 'Merlin'];
+			let first = wizards.shift();
+			console.log(wizards);
+            //dizinin son elemanını sildik
+            let last = wizards.pop();
+			console.log(wizards);
+		</script>
+	</body>
+</html>
