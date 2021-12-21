@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Object</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<script>
+            //nesnemizdeki verilere iki şekilde erişim sağladık
+			let lunch = {
+				sandwich: 'turkey',
+				drink: 'soda',
+				side: 'chips',
+				cookie: true
+			};
+			console.log(lunch.sandwich);
+			console.log(lunch['drink']);
+            //çoklu nesne erişimi
+            let lunchh = {
+				sandwich: 'turkey',
+				drink: 'soda',
+				condiments: {
+					ketchup: false,
+					mustard: false,
+					mayo: true,//buraya eriştik
+					relish: false
+				},
+				toppings: ['tomato', 'lettuce']
+			};
+			console.log(lunchh.condiments.mayo);
+            //objeden eleman sildik
+			delete lunch.chips;
+			console.log(lunch);
+			//3 nesneyi birleştirdik ardından 3 nesne ile yeni bir nesne yarattık
+			let object1 = {
+				apple: 0,
+				banana: {
+					weight: 52,
+					price: 100
+				},
+				cherry: 97
+			};
+			let object2 = {
+				banana: {
+					price: 200//muz için bu değer geldi
+				},
+				durian: 100
+			};
+			let object3 = {
+				apple: 'yum',
+				pie: 3.214,
+				applePie: true
+			};
+			let merged = Object.assign(object1, object2, object3);
+			let mergedNewObj = Object.assign({}, object1, object2, object3);
+			console.log(mergedNewObj);
+			// sandwiches dizisinin 1. indisini kestik lunch nesnesinin chips in value sini sildik
+			let sandwiches = ['turkey', 'tuna', 'ham', 'pb&j'];
+			let moreSandwiches = sandwiches;
+			let moreLunch = lunch;
+			sandwiches.splice(1, 1);
+			delete lunch.chips;
+			console.log(moreSandwiches);
+			console.log(moreLunch);
+			//sonradan türettiğimiz wizardsCopy nesnesi de druid özelliğine sahip oldu
+			let wizards = [{
+				name: 'Radagast',
+				color: 'brown'
+			}, {
+				name: 'Gandalf',
+				color: 'gray'
+			}];
+			let wizardsCopy = Array.from(wizards);
+			wizards[0].druid = true;
+			console.log(wizards[0]);
+			console.log(wizardsCopy[0]);
+			//donmuş bir nesne oluşturduğumuzda değişiklik yapamadık ancak türettiğimiz klon nesnede değişiklik yapabildik
+			let wizard = {
+				name: 'Merlin',
+				age: 'old AF'
+			};
+			Object.freeze(wizard);
+			wizard.age = 42;
+			wizard.wand = true;
+			delete wizard.name;
+			console.log(wizard);
+			let wizardClone = Object.assign({}, wizard);
+			wizardClone.age = 42;
+			console.log(wizardClone);
+			//Spread Syntax yazım olarak adlandırılan 3 nokta 
+			function add (num1, num2) {
+				return num1 + num2;
+			}
+			let numbers = [4, 2];
+			let total1 = add(numbers[0], numbers[1]);
+			let total2 = add(...numbers);
+			console.log(total1);
+			console.log(total2);
+			// dizimizin anahtar tanımlamalarını sonradan yaptık
+			let alunch = ['turkey sandwich', 'soda', 'chips', 'cookie'];
+			let [entree, drink, side, desert] = alunch;
+			console.log(entree);
+			console.log(side);
+			//nesnemizi de yukarıdaki gibi sonradan anahtar değerlerini değiştiriyoruz
+			let movies = {
+				disney: 'Moana',
+				pixar: 'Up',
+				dreamworks: 'How to Train Your Dragon',
+				nickelodeon: 'Wonder Park'
+			};
+			let {disney, pixar, nickelodeon: nick} = movies;
+			console.log(pixar);
+			console.log(nick);
+			//ES6 ile beraber bir nesneye direkt anahtar değer şeklinde atama yapabiliyoruz
+			let name = 'Merlin';
+			let job = 'wizard';
+			let age = 'old AF';
+			let wizardss = {
+				name: name, 
+				job,        
+				age         
+			}
+			console.log(wizardss);
+			//nesne içerisinde fonksiyon çağırdık
+			let wizardd = {
+				name: name, // The old way
+				job,        // ES6 shorthand
+				age,        // ES6 shorthand
+				summon: function () {
+					console.log('From out of thin air, watch me make a bear');
+				},
+				vanish () {
+					console.log(`Now you see me, now you don't.`);
+				}
+			};
+			wizardd.summon();
+			wizardd.vanish();
+		</script>
+	</body>
+</html>
